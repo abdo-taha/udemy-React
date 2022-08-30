@@ -27,7 +27,7 @@ export default function Stars({rating}){
         stars.push(<FullStar/>)
             --left;
     }
-    if (Math.floor(rating) != Math.round(rating)) {
+    if (Math.floor(rating) !== Math.round(rating)) {
         --left;
         stars.push(<HalfStar />)
     }

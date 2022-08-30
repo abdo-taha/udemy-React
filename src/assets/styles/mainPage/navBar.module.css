@@ -91,6 +91,10 @@
     padding-left: 0.4rem;
 }
 
+.search form input:focus {
+    outline: none;
+}
+
 .search form button {
     border-width: 1px;
     border: none;

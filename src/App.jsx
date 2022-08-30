@@ -1,6 +1,7 @@
 import './assets/styles/App.css';
 import CourseItem from './components/CourseItem';
 import CoursesContent from './components/CoursesContent';
+import NavBar from './components/NavBar';
 import data from "./db.json"
 
 function App() {
@@ -8,11 +9,14 @@ function App() {
   let {header,description,category} = data
   
   return (
+    <>
+    <NavBar/>
     <div style={{padding : '1rem 11.4rem '}}> 
     <CoursesContent  header = {header} description = {description} category = {category} >
         {data.courses.map(course=><CourseItem  course = {course} key = {course.id}/>)}    
     </CoursesContent>
     </div>
+    </>
   );
 }
 

@@ -1,42 +1,41 @@
 import fullstar from '../assets/images/star-full.png'
 import halfstar from '../assets/images/star-half.png'
 import emptystar from '../assets/images/star-empty.png'
-function FullStar(){
-    return (
-        <img src={fullstar} alt = ""/> 
-    )
-}
 
-function HalfStar(){
+
+
+function Star({link,key}){
     return (
-        <img src={halfstar} alt="" /> 
-    )
-}
-function EmptyStar(){
-    return (
-        <img src={emptystar} alt = ""/> 
+        <img src={link} alt = "" key = {key}/> 
     )
 }
 
 
-
-export default function Stars({rating}){
+function handleStars(rating){
     let left = 5;
     let stars = []
     for (let i = 0; i < Math.floor(rating); i++) {
-        stars.push(<FullStar/>)
+        stars.push(fullstar)
             --left;
     }
-    if (Math.floor(rating) != Math.round(rating)) {
+    if (Math.floor(rating) !== Math.round(rating)) {
         --left;
-        stars.push(<HalfStar />)
+        stars.push(halfstar)
     }
     for (let i = 0; i < left; i++) {
-        stars.push(<EmptyStar />)
+        stars.push(emptystar)
     }
+    return stars
+}
+
+
+export default function Stars({rating}){
+    
     return(
         <>
-        {stars}
+        {
+            handleStars(rating).map((link,key)=><Star link={link} key = {key}/>)
+        }
         </>
         
     )

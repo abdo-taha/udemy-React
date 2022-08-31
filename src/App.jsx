@@ -1,7 +1,7 @@
 import './assets/styles/App.css';
 import CourseItem from './components/CourseItem';
 import CoursesContent from './components/CoursesContent';
-import data from "./db.json"
+import data from "./constants/db.js"
 
 function App() {
   

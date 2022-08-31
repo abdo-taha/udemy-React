@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from "classnames"
 import CoursesContent from './CoursesContent'
-import data from "../db.json"
+import data from "../constants/db.js"
 import style from '../assets/styles/mainPage/courses.module.css'
 import CourseItem from './CourseItem'
 

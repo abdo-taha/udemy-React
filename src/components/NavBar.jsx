@@ -27,7 +27,7 @@ function NavSearch(){
             <span>
                 <img src={glass} alt="search"/>
             </span>
-            <input autocomplete="off" id="search-input" placeholder="Search for anything" />
+            <input autoComplete="off" id="search-input" placeholder="Search for anything" />
             <button id="search-button" type="submit">search</button>
         </form>
     </div>

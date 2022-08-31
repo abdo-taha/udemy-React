@@ -4,9 +4,9 @@ import emptystar from '../assets/images/star-empty.png'
 
 
 
-function Star({link,key}){
+function Star({link}){
     return (
-        <img src={link} alt = "" key = {key}/> 
+        <img src={link} alt = "" /> 
     )
 }
 

@@ -1,0 +1,71 @@
+.header {
+    position: relative;
+    margin-bottom: 48px;
+}
+
+.header img {
+    /* position: relative; */
+    max-width: 100%;
+}
+
+.headerBox {
+    background-color: white;
+    max-width: 44rem;
+    position: absolute;
+    top: 6.4rem;
+    left: 7.2rem;
+    padding: 2.4rem;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+    background-color: white;
+    max-width: 44rem;
+    position: absolute;
+    top: 6.4rem;
+    left: 7.2rem;
+    padding: 2.4rem;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+}
+
+.headerBox h1 {
+    margin-bottom: 0.8rem;
+    font-size: 3.2rem;
+    line-height: 1.25;
+}
+
+.headerBox p {
+    font-size: 1.9rem;
+    line-height: 1.4;
+}
+
+.headerImg {
+    overflow: hidden;
+}
+
+@media screen and (max-width: 1120px) {
+    .headerBox {
+        max-width: 35.2rem;
+        top: 2.4rem;
+        left: 4.8rem;
+    }
+}
+
+@media screen and (max-width: 987px) {
+    .headerBox {
+        max-width: 29.2rem;
+        top: 2.4rem;
+        left: 4.8rem;
+    }
+}
+
+@media screen and (max-width: 870px) {
+    .headerBox {
+        max-width: none;
+        position: unset;
+        box-shadow: none;
+    }
+    .headerBox h1 {
+        font-size: 2.6rem;
+    }
+    .header {
+        margin-bottom: 2.4rem;
+    }
+}

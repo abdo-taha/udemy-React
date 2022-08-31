@@ -1,0 +1,32 @@
+.topicBtn {
+    background-color: white;
+    border-style: none;
+    color: #6a6f73;
+    margin-right: 16px;
+    min-width: fit-content;
+    padding: 0.8rem 0.4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -.02rem;
+    font-size: 1.6rem;
+}
+
+.topicBtn:hover {
+    color: black;
+}
+
+.topicBtnActive {
+    color: black;
+}
+
+.courses {
+    margin-bottom: 6.4rem;
+}
+
+.topics {
+    padding: 0 24px;
+    display: flex;
+    min-height: 48px;
+    /* overflow: hidden; */
+    flex-wrap: wrap;
+}

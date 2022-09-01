@@ -1,9 +1,9 @@
 import React from 'react'
-import header from '../assets/images/header.jpg'
-import style from '../assets/styles/mainPage/pageHeader.module.css'
+import header from '../../../assets/images/header.jpg'
+import style from '../../../assets/styles/mainPage/pageHeader.module.css'
 
 
-function PageHeader() {
+const PageHeader = ()=>{
   return (
     <header className={style.header}>
     <div className={style.headerImg}>

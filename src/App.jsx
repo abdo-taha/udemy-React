@@ -1,18 +1,27 @@
 import './assets/styles/App.css';
-import MainContent from './components/MainContent';
-import NavBar from './components/NavBar';
+import Home from './components/pages/Home';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import NotFound from './components/pages/NotFound';
+import NavBar from './components/widgets/NavBar';
+import Footer from './components/widgets/Footer'
 
 
-function App() {
-  
-  
+const App = ()=> {
   
   return (
-    <>
+    
+    <BrowserRouter>
     <NavBar/>
-    <MainContent />
-
-    </>
+    <Routes>
+      <Route path="/" element={<Home/>}></Route>
+      <Route path="*" element={<NotFound/>}></Route>
+    </Routes>
+    <Footer/>
+    </BrowserRouter>
   );
 }
 

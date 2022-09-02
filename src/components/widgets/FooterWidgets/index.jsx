@@ -1,32 +1,37 @@
-import world from '../../../assets/images/world.png'
-import logo from '../../../assets/images/logo-udemy-inverted.svg'
-import style from '../../../assets/styles/mainPage/footer.module.css'
+import world from "../../../assets/images/world.png";
+import logo from "../../../assets/images/logo-udemy-inverted.svg";
 import { Link } from "react-router-dom";
+import { FooterButton } from "../../atoms/Buttons";
+import { LangDIv, FooterCrd, FooterLink } from "./styled";
 
+const FooterLinks = ({ data }) => {
+  return (
+    <ul>
+      {data.map((element, key) => (
+        <FooterLink key={key}>
+          <Link to="/">{element}</Link>
+        </FooterLink>
+      ))}
+    </ul>
+  );
+};
+const LanguageButton = () => {
+  return (
+    <LangDIv>
+      <FooterButton>
+        <img src={world} alt="" />
+        English
+      </FooterButton>
+    </LangDIv>
+  );
+};
+const CopyRight = () => {
+  return (
+    <FooterCrd>
+      <img src={logo} alt="logo" />
+      <p>© 2022 Udemy, Inc.</p>
+    </FooterCrd>
+  );
+};
 
-const FooterLinks = ({data})=>{
-    return(
-        <ul>
-            {
-                data.map((element,key)=><li key={key}><Link to="/">{element}</Link></li>)
-            }
-        </ul>
-    )
-}
-const LanguageButton = ()=>{
-    return(
-        <div className={style.langBtn}>
-                <button><img src={world} alt =""/>English</button>
-        </div>
-    )
-}
-const CopyRight = ()=>{
-    return(
-        <div className={style.footerCrd}>
-            <img src={logo} alt="logo"/>
-            <p>© 2022 Udemy, Inc.</p>
-        </div>
-    )
-}
-
-export {FooterLinks,LanguageButton,CopyRight}
+export { FooterLinks, LanguageButton, CopyRight };

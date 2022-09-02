@@ -1,56 +1,141 @@
-import style from '../../../assets/styles/mainPage/navBar.module.css'
-import classNames from "classnames"
-import glass from '../../../assets/images/magnifying-glass.png'
+import glass from "../../../assets/images/magnifying-glass.png";
 import { Link } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
-import { useState } from 'react';
+import { useState } from "react";
+import menu from "../../../assets/images/menu.png";
+import logo from "../../../assets/images/logo-udemy.svg";
+import search from "../../../assets/images/search.png";
+import cart from "../../../assets/images/shopping-cart.png";
+import {
+  SearchDiv,
+  NavLinkTeachDiv,
+  NavLinkBusinessDiv,
+  NavLinkDiv,
+  CartDiv,
+  SearchSmDiv,
+  LogoDiv,
+  MenuDiv,
+  LangBtnDiv,
+  Nav,
+  NavBtnDiv,
+} from "./styled";
 
-const NavLink = ({title,_class}) =>{
-    return (
-      <div className={ classNames(style.navItem,_class)}>
-              <Link to="/">{title}</Link>
-      </div>
-    )
-  }
-  
-  // TODO  id => ref
-  
-  const NavSearch = ()=>{
-    const [searchParams, setSearchParams] = useSearchParams({"search":""});
-    const [search, setSearch] = useState("");
-    return(
-    <div className={style.search}>
-        <form>
-            <span>
-                <img src={glass} alt="search"/>
-            </span>
-            <input 
-                autoComplete="off"
-                id="search-input"
-                placeholder="Search for anything" 
-                value={search} 
-                onChange ={e=>setSearch(e.target.value)}
-            />
-            <button id="search-button" onClick={e=>{ e.preventDefault(); setSearchParams({"search":search})}}  >search</button>
-        </form>
-    </div>
-    )
-  }
-  
-  const NavBtn = ({title,_class})=>{
-      return(
-      <div className={classNames(style.navBtn,_class)}>
-          <Link to="/">{title}</Link>
-      </div>
-      )
-  }
-  
-  const NavImg = ({src,_class,alt})=>{
-      return(
-      <div className={_class}>
-          <Link to="/"><img src={src} alt={alt}/></Link>
-      </div>
-      )
-  }
+const NavBtn = ({ title, black }) => {
+  return (
+    <NavBtnDiv black={black}>
+      <Link to="/">{title}</Link>
+    </NavBtnDiv>
+  );
+};
+const LangBtn = ({ title }) => {
+  return (
+    <LangBtnDiv>
+      <Link to="/">{title}</Link>
+    </LangBtnDiv>
+  );
+};
 
-  export {NavLink,NavSearch,NavBtn,NavImg}
+const NavLink = ({ title }) => {
+  return (
+    <NavLinkDiv>
+      <Link to="/">{title}</Link>
+    </NavLinkDiv>
+  );
+};
+
+const NavLinkBusiness = ({ title }) => {
+  return (
+    <NavLinkBusinessDiv>
+      <Link to="/">{title}</Link>
+    </NavLinkBusinessDiv>
+  );
+};
+const NavLinkTeach = ({ title }) => {
+  return (
+    <NavLinkTeachDiv>
+      <Link to="/">{title}</Link>
+    </NavLinkTeachDiv>
+  );
+};
+
+const NavSearch = () => {
+  const [searchParams, setSearchParams] = useSearchParams({ search: "" });
+  const [search, setSearch] = useState("");
+  return (
+    <SearchDiv>
+      <form>
+        <span>
+          <img src={glass} alt="search" />
+        </span>
+        <input
+          autoComplete="off"
+          placeholder="Search for anything"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <button
+          id="search-button"
+          onClick={(e) => {
+            e.preventDefault();
+            setSearchParams({ search: search });
+          }}
+        >
+          search
+        </button>
+      </form>
+    </SearchDiv>
+  );
+};
+
+const Menu = () => {
+  return (
+    <MenuDiv>
+      <Link to="/">
+        <img src={menu} alt="" />
+      </Link>
+    </MenuDiv>
+  );
+};
+
+const Logo = () => {
+  return (
+    <LogoDiv>
+      <Link to="/">
+        <img src={logo} alt="" />
+      </Link>
+    </LogoDiv>
+  );
+};
+
+const SearchSm = () => {
+  return (
+    <SearchSmDiv>
+      <Link to="/">
+        <img src={search} alt="" />
+      </Link>
+    </SearchSmDiv>
+  );
+};
+const Cart = () => {
+  return (
+    <CartDiv>
+      <Link to="/">
+        <img src={cart} alt="" />
+      </Link>
+    </CartDiv>
+  );
+};
+
+export {
+  NavBtn,
+  LangBtn,
+  NavLink,
+  NavLinkBusiness,
+  NavLinkTeach,
+  NavSearch,
+  Menu,
+  Logo,
+  SearchSm,
+  Cart,
+  Nav,
+};

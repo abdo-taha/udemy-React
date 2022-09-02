@@ -1,22 +1,17 @@
-import style from '../../../assets/styles/mainPage/mainContent.module.css'
-import Courses from '../../widgets/Courses'
-import PageHeader from '../../widgets/PageHeader'
-
+import Courses from "../../widgets/Courses";
+import CoursesHeader from "../../widgets/CoursesHeader/CoursesHeader";
+import PageHeader from "../../widgets/PageHeader";
+import { Main } from "./styled";
 
 const Home = () => {
   return (
-    <main className={style.main}>
+    <Main>
       <PageHeader />
-      <section className={style.coursesHeader}>
-            <p className={style.coursesHeaderH1}>A broad selection of courses</p>
-            <p className={style.coursesHeaderMsg}>Choose from 185,000 online video courses with new additions published every month</p>
-      </section>
+      <CoursesHeader />
       <Courses />
       {/* TODO categories */}
-    </main>
+    </Main>
+  );
+};
 
-      
-  )
-}
-
-export default Home
+export default Home;

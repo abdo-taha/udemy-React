@@ -1,21 +1,16 @@
-import style from "../../../assets/styles/mainPage/coursesContent.module.css"
+import { GeneralButton } from "../../atoms/Buttons";
+import { CoursesList, CoursesContentHead, Div } from "./styled";
 
-
-
- const CoursesContent = ({children,header,description,category})=>{
-
-
-    return (
-        <div className={style.coursesContent}>
-            <div className={style.coursesContentHead}>
-                <h2>{header}</h2>
-                <p>{description}</p>
-                <a className={style.gnrlBtn} href="./index.html">Explore {category}</a>
-            </div>
-            <div className={style.coursesList}>
-                {children}
-            </div>
-        </div>
-    )
-}
-export default CoursesContent
+const CoursesContent = ({ children, header, description, category }) => {
+  return (
+    <Div>
+      <CoursesContentHead>
+        <h2>{header}</h2>
+        <p>{description}</p>
+        <GeneralButton value={`Explore ${category}`} />
+      </CoursesContentHead>
+      <CoursesList>{children}</CoursesList>
+    </Div>
+  );
+};
+export default CoursesContent;

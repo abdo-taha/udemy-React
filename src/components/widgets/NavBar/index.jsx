@@ -27,7 +27,7 @@ const NavBar = () => {
       <Cart />
       <NavBtn title="Log in" />
       <NavBtn title="Sign up" black />
-      <LangBtn title={<img src={world} alt="change language" />} />
+      <LangBtn title={<img src={world} alt="" />} />
     </Nav>
   );
 };

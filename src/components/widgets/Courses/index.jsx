@@ -1,25 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import CoursesContent from "../CoursesContent";
 import CourseItem from "../CourseItem";
 import { useState, useRef } from "react";
 import { CourseCategoryButton } from "../../atoms/Buttons";
 import { useSearchParams } from "react-router-dom";
 import { Section, Div } from "./styled";
+import FullDataContext from "../../../Hooks/FullDataContext";
 
 const Courses = () => {
   const [data, setData] = useState(null);
   const [filteredData, setFilteredData] = useState(null);
   const [category, setCategory] = useState("python");
   const [searchParams] = useSearchParams();
-
+  const fullData = useContext(FullDataContext);
   useEffect(() => {
-    const getData = async () => {
-      let _data = await fetch(
-        `http://localhost:3004/courses?name=${category}`
-      ).then((x) => x.json());
-      setData(_data[0]);
-    };
-    getData();
+    if (fullData.courses)
+      setData(fullData.courses.filter((course) => course.name === category)[0]);
   }, [category]);
 
   useEffect(() => {

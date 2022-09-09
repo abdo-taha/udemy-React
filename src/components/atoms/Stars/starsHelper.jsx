@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 const Img = styled.img`
   height: 1.4rem;
+  margin: 0.2rem;
 `;
 
 const Star = ({ link }) => {

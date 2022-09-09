@@ -161,8 +161,9 @@ const Nav = styled.div `
     box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
     align-content: center;
     position: relative;
-    z-index: 1;
+    z-index: 1010;
     font-size: 1.4rem;
+    background-color: white;
     @media screen and (max-width: 870px) {
         padding: 1rem;
     }

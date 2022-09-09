@@ -1,5 +1,5 @@
 import glass from "../../../assets/images/magnifying-glass.png";
-import { Link } from "react-router-dom";
+import { createSearchParams, Link, useNavigate } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import { useState } from "react";
 import menu from "../../../assets/images/menu.png";
@@ -61,11 +61,12 @@ const NavLinkTeach = ({ title }) => {
 const NavSearch = () => {
   const [searchParams, setSearchParams] = useSearchParams({ search: "" });
   const [search, setSearch] = useState("");
+  const navigate = useNavigate();
   return (
     <SearchDiv>
       <form>
         <span>
-          <img src={glass} alt="search" />
+          <img src={glass} alt="" />
         </span>
         <input
           autoComplete="off"
@@ -77,7 +78,10 @@ const NavSearch = () => {
           id="search-button"
           onClick={(e) => {
             e.preventDefault();
-            setSearchParams({ search: search });
+            navigate({
+              pathname: "/",
+              search: createSearchParams({ search: search }).toString(),
+            });
           }}
         >
           search

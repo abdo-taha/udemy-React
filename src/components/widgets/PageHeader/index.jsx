@@ -6,7 +6,7 @@ const PageHeader = () => {
   return (
     <Header>
       <div style={{ overflow: "hidden" }}>
-        <img src={header} alt="new to udemy" />
+        <img src={header} alt="" />
       </div>
       <HeaderBox>
         <h1>New to Udemy? Lucky you.</h1>

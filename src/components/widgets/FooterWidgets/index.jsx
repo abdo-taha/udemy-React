@@ -28,7 +28,7 @@ const LanguageButton = () => {
 const CopyRight = () => {
   return (
     <FooterCrd>
-      <img src={logo} alt="logo" />
+      <img src={logo} alt="" />
       <p>© 2022 Udemy, Inc.</p>
     </FooterCrd>
   );
